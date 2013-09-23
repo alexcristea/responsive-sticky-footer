@@ -1,0 +1,56 @@
+@import "fragment-variables.less";
+
+/* Responsive Sticky Footer
+-------------------------------------------------- */
+
+@sticky-footer-height: 488px;
+
+@sticky-footer-height-xs: 488px;
+@sticky-footer-height-sm: 488px;
+@sticky-footer-height-md: 210px;
+@sticky-footer-height-lg: 210px;
+
+html,
+body {
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#push-sticky-footer {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto (-@sticky-footer-height);
+  padding: 0 0 @sticky-footer-height;
+
+  & + #sticky-footer {
+    height: @sticky-footer-height;
+  }
+}
+
+.push-footer-in-screen(@screen-xs, @sticky-footer-height-xs);
+.push-footer-in-screen(@screen-sm, @sticky-footer-height-sm);
+.push-footer-in-screen(@screen-md, @sticky-footer-height-md);
+.push-footer-in-screen(@screen-lg, @sticky-footer-height-lg);
+
+
+/* Sticky footer mixin
+-------------------------------------------------- */
+
+.push-footer-in-screen(@screen-size, @height) {
+  @media (min-width: @screen-size) {
+    .push-footer(@height);
+  }
+}
+
+.push-footer(@height) {
+  #push-sticky-footer {
+    margin-bottom: -@height;
+    padding-bottom: @height;
+
+    & + #sticky-footer {
+      height: @height;
+    }
+  }
+}

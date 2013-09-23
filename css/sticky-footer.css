@@ -1,0 +1,56 @@
+/* Responsive Sticky Footer
+-------------------------------------------------- */
+html,
+body {
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#push-sticky-footer {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -488px;
+  padding: 0 0 488px;
+}
+#push-sticky-footer + #sticky-footer {
+  height: 488px;
+}
+@media (min-width: 480px) {
+  #push-sticky-footer {
+    margin-bottom: -488px;
+    padding-bottom: 488px;
+  }
+  #push-sticky-footer + #sticky-footer {
+    height: 488px;
+  }
+}
+@media (min-width: 768px) {
+  #push-sticky-footer {
+    margin-bottom: -488px;
+    padding-bottom: 488px;
+  }
+  #push-sticky-footer + #sticky-footer {
+    height: 488px;
+  }
+}
+@media (min-width: 992px) {
+  #push-sticky-footer {
+    margin-bottom: -210px;
+    padding-bottom: 210px;
+  }
+  #push-sticky-footer + #sticky-footer {
+    height: 210px;
+  }
+}
+@media (min-width: 1200px) {
+  #push-sticky-footer {
+    margin-bottom: -210px;
+    padding-bottom: 210px;
+  }
+  #push-sticky-footer + #sticky-footer {
+    height: 210px;
+  }
+}
+/* Sticky footer mixin
+-------------------------------------------------- */
